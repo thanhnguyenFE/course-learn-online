@@ -4,7 +4,7 @@ import {IconView, IconStar} from "@/components/icons";
 
 const CourseItem = () => {
     return (
-        <div className="bg-white border-gray-200 rounded-2xl p-4">
+        <div className="bg-white dark:bg-grayDarker border-gray-200 dark:border-opacity-10 rounded-2xl p-4">
             <Link href="#" className="block h-[200px] relative">
                 <Image
                     fill
@@ -19,13 +19,13 @@ const CourseItem = () => {
                     Khóa học ReactJS Master - Nắm vững kiến thức React chuyên sâu
                 </h3>
                 <div className="flex justify-between">
-                    <div className='flex gap-4'>
+                    <div className='flex gap-4 text-grayDark'>
                         <p className="flex gap-2 items-center"><IconView/>6</p>
                         <p className="flex gap-2 items-center"><IconStar/>15365</p>
                     </div>
                     <div className="flex gap-4">
                         <span className="font-bold text-blue-700">499.000đ</span>
-                        <span className="text-gray-400 line-through">899.000đ</span>
+                        <span className="text-grayDark line-through">899.000đ</span>
                     </div>
                 </div>
                 <div className="py-4 rounded-xl bg-blue-400 text-white text-center mt-4">Xem chi tiết</div>

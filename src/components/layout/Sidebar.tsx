@@ -1,10 +1,11 @@
 import {menuItems} from "@/constants";
 import {TMenuItem} from "@/types";
 import {ActiveLink} from "@/components/common";
+import {ModeToggle} from "@/components/common/ModeToggle";
 
 const Sidebar = () => {
     return (
-        <div className="p-5 border-r border-r-gray-200 bg-white">
+        <div className="p-5 border-r border-r-gray-200 dark:border-opacity-10 bg-white dark:bg-grayDarker">
             <a href="/" className="font-bold text-3xl inline-block mb-5">
                 <span className="text-primary">U</span>
                 cademy
@@ -19,6 +20,9 @@ const Sidebar = () => {
                     ></MenuItem>
                 ))}
             </ul>
+            <div className="mt-auto items-center justify-end gap-5">
+                <ModeToggle/>
+            </div>
         </div>
     );
 };

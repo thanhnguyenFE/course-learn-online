@@ -2,6 +2,7 @@ import {manrope} from "@/utils";
 import {ClerkProvider} from "@clerk/nextjs";
 import type {Metadata} from "next";
 import "./globals.css";
+import {ThemeProvider} from "@/components/common/ThemeProvider";
 
 export const metadata: Metadata = {
     title: "Ucademy",
@@ -16,7 +17,14 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en">
-            <body className={manrope.className}>{children}</body>
+            <body className={manrope.className}>
+            <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+            >{children}
+            </ThemeProvider></body>
             </html>
         </ClerkProvider>
     );

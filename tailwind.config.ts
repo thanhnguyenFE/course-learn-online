@@ -6,10 +6,10 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: {
-                    DEFAULT: 'hsl(var(--primary))',
-                    foreground: 'hsl(var(--primary-foreground))'
-                },
+                primary: '#ff979a',
+                grayDarkest: '#131316',
+                grayDarker: '#121226',
+                grayDark: '#9394A1',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {
