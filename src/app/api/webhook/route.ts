@@ -1,11 +1,14 @@
 import {Webhook} from "svix";
 import {WebhookEvent} from "@clerk/backend";
+import createUser from "@/lib/actions/user.actions";
+import {NextResponse} from "next/server";
+import {headers} from "next/headers";
 
 
 export async function POST(req: Request) {
     const svix_id = req.headers.get("svix-id") ?? "";
-    const svix_timestamp = req.headers.get("svix-timestamp") ?? "";
-    const svix_signature = req.headers.get("svix-signature") ?? "";
+    const svix_timestamp = headers().get("svix-timestamp") ?? "";
+    const svix_signature = headers().get("svix-signature") ?? "";
 
     if (!process.env.WEBHOOK_SECRET) throw new Error("WEBHOOK_SECRET is not defined");
 
@@ -28,7 +31,23 @@ export async function POST(req: Request) {
     const eventType = msg?.type;
 
     if (eventType === "user.created") {
-        console.log("user", msg.data);
+        const {
+            id,
+            username,
+            email_addresses,
+        } = msg?.data;
+
+        const user = createUser({
+            clerkId: id,
+            email: email_addresses[0].email_address,
+            username: username!
+        })
+
+
+        return NextResponse.json({
+            message: "OK",
+            user
+        })
     }
 
     // Rest
