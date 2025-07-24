@@ -10,7 +10,7 @@ export interface IUser extends Document {
     status: EUserStatus;
     role: EUserRole;
     created_at: Date;
-    clerk_id: string;
+    clerkId: string;
 }
 
 const UserSchema = new Schema<IUser>({
@@ -30,7 +30,7 @@ const UserSchema = new Schema<IUser>({
         default: EUserRole.USER,
     },
     created_at: {type: Date, default: Date.now},
-    clerk_id: {type: String, unique: true},
+    clerkId: {type: String, unique: true},
 });
 
 const UserModel = models.User || model("User", UserSchema);
