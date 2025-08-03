@@ -14,9 +14,10 @@ export interface IUser extends Document {
 }
 
 const UserSchema = new Schema<IUser>({
+    clerkId: {type: String, unique: true},
     name: {type: String},
-    username: {type: String, unique: true},
-    email: {type: String, unique: true},
+    username: {type: String, unique: true, required: true},
+    email: {type: String, unique: true, required: true},
     avatar: {type: String, default: ""},
     courses: [{type: Schema.Types.ObjectId, ref: "Course"}],
     status: {
@@ -30,7 +31,7 @@ const UserSchema = new Schema<IUser>({
         default: EUserRole.USER,
     },
     created_at: {type: Date, default: Date.now},
-    clerkId: {type: String, unique: true},
+
 });
 
 const UserModel = models.User || model("User", UserSchema);
