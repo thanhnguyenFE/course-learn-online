@@ -4,24 +4,21 @@ const IconUsers = (props: ComponentProps<"svg">) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
+            width="1em"
+            height="1em"
             {...props}
         >
             <path
+                fill="none"
+                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
-            />
+                strokeWidth="1.5"
+                d="M5 20v-1a7 7 0 0 1 7-7v0a7 7 0 0 1 7 7v1m-7-8a4 4 0 1 0 0-8a4 4 0 0 0 0 8"
+            ></path>
         </svg>
-    );
+    )
 };
 
 export default IconUsers;

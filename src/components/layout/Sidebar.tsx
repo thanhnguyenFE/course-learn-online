@@ -25,7 +25,7 @@ const Sidebar = () => {
                     ></MenuItem>
                 ))}
             </ul>
-            <div className="mt-auto items-center justify-end gap-5">
+            <div className="mt-auto flex items-center justify-end gap-3">
                 <ModeToggle/>
                 {!userId ? (
                     <Link href="/sign-in"
